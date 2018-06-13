@@ -21,23 +21,45 @@
 					
                     <label for="filterQuery">
 						Query:
-						<input type="text" id="filterQuery">
+						<input type="text" id="filterQuery" v-model="filterQuery">
 					</label>
 
 					<span>
 						Active:
 						<label for="userStateActive">
 							Yes:
-							<input type="radio" value="true" id="userStateActive"                   
-							selected>
+							<input type="radio" v-bind:value="true" id="userStateActive"                   
+							selected v-model="filterUserState">
 						</label>
 						<label for="userStateInactive">
 							No:
-						  	<input type="radio" value="false" id="userStateInactive">
+							  <input type="radio" v-bind:value="false" id="userStateInactive"
+							   v-model="filterUserState">
 						</label>
-					</span>                    
+					</span>    
+				
+			</form>
+			
+			<table>
 
-            </form>
+				<tr v-for="person in people"> 
+					<td>{{ person.name }}</td>		
+					<td>
+						<a v-bind:href="'mailto:' + person.email">{{ person.email}}</a>
+					</td>
+					<td>
+						{{ person.balance }}
+					</td>
+					<td> {{ person.registered }}</td>
+					<td>
+						{{ person.isActive }}
+					</td>
+				</tr>
+
+			</table>
+
+
+
         </div>
 		<script src="https://unpkg.com/vue"></script>
 		<script type="text/javascript">
