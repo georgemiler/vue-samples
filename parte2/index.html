@@ -17,7 +17,26 @@
                                 <option value="balance">Balance</option>
                                 <option value="registered">Date registered</option>
                             </select>
-                    </label>
+					</label>
+					
+                    <label for="filterQuery">
+						Query:
+						<input type="text" id="filterQuery">
+					</label>
+
+					<span>
+						Active:
+						<label for="userStateActive">
+							Yes:
+							<input type="radio" value="true" id="userStateActive"                   
+							selected>
+						</label>
+						<label for="userStateInactive">
+							No:
+						  	<input type="radio" value="false" id="userStateInactive">
+						</label>
+					</span>                    
+
             </form>
         </div>
 		<script src="https://unpkg.com/vue"></script>
