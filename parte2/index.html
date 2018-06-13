@@ -19,12 +19,12 @@
                             </select>
 					</label>
 					
-                    <label for="filterQuery">
+                    <label for="filterQuery" v-show="!isActiveFilterSelected()">
 						Query:
 						<input type="text" id="filterQuery" v-model="filterQuery">
 					</label>
 
-					<span>
+					<span v-show="isActiveFilterSelected()">
 						Active:
 						<label for="userStateActive">
 							Yes:
@@ -103,6 +103,9 @@
 
 						return result;
 					},
+					isActiveFilterSelected() {
+						return (this.filterField === 'isActive');
+					}					
                 }
             });            
         </script>        
