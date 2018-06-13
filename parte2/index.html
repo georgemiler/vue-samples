@@ -42,7 +42,7 @@
 			
 			<table>
 
-				<tr v-for="person in people"> 
+				<tr v-for="person in people" v-show="filterRow(person)"> 
 					<td>{{ person.name }}</td>		
 					<td>
 						<a v-bind:href="'mailto:' + person.email">{{ person.email}}</a>
@@ -76,7 +76,9 @@
 				    filterUserState: ''
 			    },
 			    methods: {
-
+					filterRow(person) {
+         				return true;
+      				}
                 }
             });            
         </script>        
